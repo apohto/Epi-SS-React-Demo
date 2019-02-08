@@ -1,0 +1,3 @@
+﻿@model Epi_SS_React_Demo.Models.Blocks.PrimaryCalloutBlock
+
+@Html.React("PrimaryCallout", new { header = Model.Header, buttonText = Model.ButtonText, buttonLink = Url.ContentUrl(Model.ButtonLink) })

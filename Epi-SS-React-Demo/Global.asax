@@ -1,0 +1,1 @@
+﻿<%@ Application Codebehind="Global.asax.cs" Language="C#" Inherits="Epi_SS_React_Demo.EPiServerApplication" %>
