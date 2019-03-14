@@ -1,0 +1,7 @@
+﻿@model Epi_SS_React_Demo.Models.Models.Pages.SearchPage
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Html.React("MainSearch", new { header = Model.Header, buttonText = Model.SearchButtonText, placeholder = Model.SearchBoxPlaceholder })
