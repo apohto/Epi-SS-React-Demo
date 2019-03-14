@@ -1,7 +1,7 @@
 ﻿
 function SearchResult({ title, description, linkUrl }) {
     return (
-        <div className="search-result-container">
+        <div className="search-result-container mt-4">
             <a className="result-title" href={linkUrl}>{title}</a>
             <div className="result-description">{description}</div>
         </div>
@@ -30,20 +30,25 @@ class MainSearch extends React.Component {
     }
 
     getResults(event) {
-        $.ajax({
-            url: "/api/search/getResults",
-            dataType: "json",
-            type: "Get",
-            data: {
-                q: this.state.searchText
+
+        var data = [
+            {
+                Title: "Google",
+                Description: "The world's largest search engine",
+                LinkUrl: "https://www.google.com"
             },
-            success: function(data) {
-                this.setState({ results: data });
+            {
+                Title: "Github",
+                Description: "The world's largest code repository",
+                LinkUrl: "https://www.github.com"
             },
-            error: function(error, exception) {
-                console.log(error + ": " + exception);
-            }
-        });
+            {
+                Title: "Youtube",
+                Description: "The world's largest repository of cat videos",
+                LinkUrl: "https://www.youtube.com"
+            }];
+
+        this.setState({ results: data });
     }
 
     render() {
@@ -51,14 +56,17 @@ class MainSearch extends React.Component {
             <div className="search-container">
                 <div className="search-section">
                     <h1 className="search-header">{this.state.header}</h1>
-                    <input type="text" className="search-box" name="searchText" placeholder={this.state.placeholder} onChange={this.onFieldChange} />
-                    <button className="search-button" onClick={this.getResults}>{this.state.buttonText}</ button>
+                    <div className="col-sm-4 offset-sm-4 row">
+                        <input type="text" className="search-box form-control col-sm-9" name="searchText" placeholder={this.state.placeholder} onChange={this.onFieldChange} />
+                        <button className="search-button btn btn-primary col-sm-3" onClick={this.getResults}>{this.state.buttonText}</ button>
+                    </div>
+                    
                 </div>
                 <div className="results-section">
                     {
-                        this.state.results.map(function (result) {
+                        this.state.results.map(result => (
                             <SearchResult title={result.Title} description={result.Description} linkUrl={result.LinkUrl} key={result.Id} />
-                        })
+                        ))
                     }
                 </div>
             </div>

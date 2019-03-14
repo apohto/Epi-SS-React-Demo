@@ -4,4 +4,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@Html.React("MainSearch", new { header = Model.Header, buttonText = Model.SearchButtonText, placeholder = Model.SearchBoxPlaceholder })
+@Html.React("MainSearch", new
+{
+    header = Model.Header, buttonText = Model.SearchButtonText, placeholder = Model.SearchBoxPlaceholder
+})
