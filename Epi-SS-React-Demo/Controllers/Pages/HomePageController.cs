@@ -1,6 +1,6 @@
-﻿using Epi_SS_React_Demo.Models.Pages;
-using EPiServer.Web.Mvc;
+﻿using EPiServer.Web.Mvc;
 using System.Web.Mvc;
+using Epi_SS_React_Demo.Models.Models.Pages;
 
 namespace Epi_SS_React_Demo.Controllers.Pages
 {

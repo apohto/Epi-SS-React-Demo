@@ -13,7 +13,8 @@ namespace Epi_SS_React_Demo
 		    ReactSiteConfiguration.Configuration
 		        .SetReuseJavaScriptEngines(true)
 		        .SetAllowJavaScriptPrecompilation(true)
-		        .AddScript("~/Static/js/PrimaryCallout.jsx");
+		        .AddScript("~/Static/js/Components/PrimaryCallout.jsx")
+                .AddScript("~/Static/js/Components/MainSearch.jsx");
 
 		    JsEngineSwitcher.Current.DefaultEngineName = V8JsEngine.EngineName;
 		    JsEngineSwitcher.Current.EngineFactories.AddV8();

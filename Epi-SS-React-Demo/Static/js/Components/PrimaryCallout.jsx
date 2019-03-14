@@ -13,8 +13,8 @@ class PrimaryCallout extends React.Component {
         return (
             <div className="primary-callout-container">
                 <h2 className="primary-callout-header">{this.state.header}</h2>
-                <a href={this.state.buttonLink} className="primary-callout-link">
-                    <button className="primary-callout-button">{this.state.buttonText}</button>
+                <a href={this.state.buttonLink} className="primary-callout-link btn btn-primary">
+                    {this.state.buttonText}
                 </a>
             </div>
         );
